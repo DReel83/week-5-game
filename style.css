@@ -1,0 +1,61 @@
+@font-face {
+	font-family: BTTF;
+	src: url("fonts/bttf.ttf");
+}
+
+body {
+	background-color: black;
+	
+}
+
+.jumbotron {
+	margin-top: 1%;
+	height: 300px;
+	background-color: black;
+	background-image: url("logo.jpg");
+	background-repeat: no-repeat;
+	background-size: 50% 100%;
+	background-position: center;
+}
+
+h1 {
+	text-align: center;
+	color: white;
+	margin-bottom: 5%;
+	padding: 5px;
+	font-family: bttf;
+}
+
+h2 {
+	text-align: center;
+	margin: auto;
+	margin-top: 2%;
+	padding: 10px;
+	float: none;
+	font-family: bttf;
+	text-shadow: 0 0 5px red;
+}
+
+h3 {
+	text-align: center;
+	margin: auto;
+	margin-top: 2%;
+	padding: 10px;
+	float: none;
+	font-family: bttf;
+	text-shadow: 0 0 5px orange;
+
+}
+
+.panel-title {
+	font-family: bttf;
+	
+	text-align: center;
+}
+
+.panel-body {
+	height: 500px;
+	background-color: black;
+	color: white;
+}
+
