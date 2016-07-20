@@ -115,6 +115,30 @@ var quiz = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+var n = 30;
+setTimeout(countDown,1500);
+
+function countDown(){
+   n--;
+   if(n > 0){
+      setTimeout(countDown,1500);
+   }
+   document.getElementById("timer")innerHTML = (n);
+}
+
+
+
 </script>
 
 

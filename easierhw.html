@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+<link rel="stylesheet" type="text/css" href="style.css">
+
+
+
+	<title>Trivia</title>
+
+
+</head>
+
+
+<body>
+
+<!-- Everything is wraped in a container. This is ease of responsiveness. -->
+<div class="container">
+	<div class="jumbotron">
+</div>
+
+<!-- From this point on in the document a custom font, with the exception of the quiz which was set to Times for readability-->
+<div>
+    <h1>TOTALLY TRIVIAL TRIVIA</h1>
+</div>
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">let the journey begin</h3>
+  </div>
+  <div class="panel-body">
+<!-- The following panel containes the timmer for the quiz -->
+    <h2 id="timer" style="background-color: white; color: black; width: 75%;"></h3>
+<!-- Questions and choices in an ordered list-->
+
+    <p id="question" style="background-color: white; color: black; width: 75%;">
+      <ol >
+        <li>
+          What is printed on the license plate of the time traveling Delorean?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">SCIENCE</label>
+        <label class="radio-inline"><input type="radio" name="optradio">OUTATIME</label>
+        <label class="radio-inline"><input type="radio" name="optradio">TIME2GO</label>
+        <label class="radio-inline"><input type="radio" name="optradio">TIMMETRVL</label>
+        <br>
+        <br>
+        <li>
+          In the first Back to the Future movie, which shopping mall does Marty meet Doc at?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">Big Fur</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Twin Pines</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Wild Oak</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Hill Valley</label>
+        <br>
+        <br>
+        <li>
+          What date does Doc take Marty and Jennifer to in BTTF 2?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">Sept. 22nd, 2015</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Nov. 8th, 2015</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Dec. 1st, 2015</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Oct. 21st, 2015</label>
+        <br>
+        <br>
+        <li>
+          What is the name of the cafe Marty is suppose to meet Griff at in 2015?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">Cafe Future</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Space Age Cafe</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Cafe 80's</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Jigowatt Cafe</label>
+        <br>
+        <br>
+        <li>
+          What does Biff run into with his car after chasing Marty around the Hill Valley square?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">Manure</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Garbage</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Dirt</label>
+        <label class="radio-inline"><input type="radio" name="optradio">Mr. Strictland's Car</label>
+        <br>
+        <br>
+        <li>
+          How much electricity is require to power the Flux Capacitor (which makes time travel possible)?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">1.21 milliwats</label>
+        <label class="radio-inline"><input type="radio" name="optradio">1.21 terrawatts</label>
+        <label class="radio-inline"><input type="radio" name="optradio">1.21 jigowatts</label>
+        <label class="radio-inline"><input type="radio" name="optradio">1.21 gigawatts</label>
+        <br>
+        <br>
+        <li>
+          What the hell is a jigowatt?
+        </li>
+        <label class="radio-inline"><input type="radio" name="optradio">I don't know.</label>
+        <label class="radio-inline"><input type="radio" name="optradio">I don't care.</label>
+        <label class="radio-inline"><input type="radio" name="optradio">A jigowatt is really a gigawatt that was mispelled, and mispronounced by the movie's producers Robert Zemeckis and Bob Gale.</label>
+        <label class="radio-inline"><input type="radio" name="optradio">1 trillion watts</label>
+        <br>
+        <br>
+      </ol>
+    </p>
+
+    <h3 id="choices" style="background-color: white; color: black; width: 75%;">test</h3>
+  </div>
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+
+
+<script type="text/javascript">
+	
+
+
+var quiz = [
+{
+    "Question": "What is printed on the license plate of the time traveling Delorean?",
+    "Choices": ["SCIENCE", "TIMETRVL", "OUTATIME", "TIME2GO"],
+    "Answer": "OUTATIME"
+
+}
+{
+    "Question": "In the first Back to the Future movie, which shopping mall does Marty meet Doc at?",
+    "Choices": ["Big Fur", "Twin Pines", "Wild Oak", "Hill Valley"]
+    "Answer": "Twin Pines"
+}
+{
+    "Question": "What date does Doc take Marty and Jennifer to in BTTF 2?"
+    "Choices": ["Sept. 22nd, 2015", "Nov. 8th, 2015", "Dec. 1st, 2015", "Oct. 21st, 2015"]
+    "Answer": "Oct 21st, 2015"
+}
+{
+    "Question": "What is the name of the cafe Marty is suppose to meet Griff at in 2015? "
+    "Choices": ["Cafe Future", "Cafe 80's", "Space Age Cafe", "Jigowatt Cafe"]
+    "Answer": "Cafe 80's"
+}
+{
+    "Question": "What does Biff run into with his car after chasing Marty around the Hill Valley square? "
+    "Choices": ["Manure", "Garbage", "Dirt", "Mr. Strictland's car"]
+    "Answer": "Manure"
+}
+{
+    "Question": "How much electricity is require to power the Flux Capacitor (which makes time travel possible)?"
+    "Choices": ["1.21 milliwatts", "1.21 terrawatts", "1.21 jigowatts", "1.21 gigawatts"]
+    "Answer": "1.21 jigowatts"
+}
+{
+    "Question": "What the hell is a jigowatt?"
+    "Choices": ["I don't know.", "I don't care", "A jigowatt is really a gigawatt that was mispelled, and mispronounced by the movie's producers Robert Zemeckis and Bob Gale.", "1 billion watts."]
+    "Answer": "A jigowatt is really a gigawatt that was mispelled, and mispronounced by the movie's producers Robert Zemeckis and Bob Gale."
+}
+{
+    "Question": "What is Doc Brown's dog's name in the year 1955?"
+    "Choices": [ "Einstien", "Galalleo", "Newton", "Capurnicus"]
+    "Answer": "Capurnicus"
+}
+{
+    "Question": "What is the name of George McFly's book at the end of the first movie?"
+    "Choices": ["An Alien Named Darth", "A Match Made In Time", "A Match Made In Space", "My Homework, Your Handwriting"]
+    "Answer": "A Match Made In Space"
+}
+{
+    "Question": "Who was originally cast to play the role of Marty McFly?"
+    "Choices": ["Crispin Glover", "Eric Stoltz", "Robert Downey Jr.", "Tom Criuse"]
+    "Answer": "Eric Stoltz"
+}
+]
+
+var n = 30;
+setTimeout(countDown,1500);
+
+function countDown(){
+   n--;
+   if(n > 0){
+      setTimeout(countDown,1500);
+   }
+   document.getElementById("timer")innerHTML = (n);
+}
+
+
+
+</script>
+
+
+</div>
+
+</body>
+</html>
