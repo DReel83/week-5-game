@@ -36,9 +36,11 @@
     <h3 class="panel-title">let the journey begin</h3>
   </div>
   <div class="panel-body">
-    <h2 id="timer" style="background-color: white; color: black; width: 75%;">test</h3>
-    <h3 id="question" style="background-color: white; color: black; width: 75%;">test</h2>
-    <h3 id="choices" style="background-color: white; color: black; width: 75%;">test</h3>
+    <div id="timer"><div>
+    <div id="currentQuestion"></div>
+    <div id="choices"></div>
+    <div id="message"></div>
+    <div id="nextButton"></div>
   </div>
 </div>
 
@@ -113,6 +115,25 @@ var quiz = [
 ]
 
 
+var currentQuestion = 0;
+var correctAnswers = 0;
+var quizEnd = false;
+
+$(document).ready()
+
+    displayCurrentQuestion();
+    $(this).find('#question').hide();
+
+    $(this).find('#nextButton').on('click', function () 
+        if (!quizEnd) {
+
+            value = $('input[type="radio"]:checked').val();
+
+            if(value == undefined) {
+                $(document).find('quiz')
+
+
+            }})
 
 
 
@@ -121,21 +142,16 @@ var quiz = [
 
 
 
+// var n = 30;
+// setTimeout(countDown,1500);
 
-
-
-
-
-var n = 30;
-setTimeout(countDown,1500);
-
-function countDown(){
-   n--;
-   if(n > 0){
-      setTimeout(countDown,1500);
-   }
-   document.getElementById("timer")innerHTML = (n);
-}
+// function countDown(){
+//    n--;
+//    if(n > 0){
+//       setTimeout(countDown,1500);
+//    }
+//    document.getElementById("timer")innerHTML = (n);
+// }
 
 
 
