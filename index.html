@@ -122,7 +122,7 @@ var quizEnd = false;
 $(document).ready()
 
     displayCurrentQuestion();
-    $(this).find('#question').hide();
+    $(this).find('#message').hide();
 
     $(this).find('#nextButton').on('click', function () 
         if (!quizEnd) {
@@ -130,7 +130,26 @@ $(document).ready()
             value = $('input[type="radio"]:checked').val();
 
             if(value == undefined) {
-                $(document).find('message').text("Hey butthead! I gotta have time to recopy. Do have any idea what would happen if I turned <i>my</i> homework in <i>your</i> handwriting? (Please make a selection)")
+                $(document).find('#message').text("Hey butthead! Do have any idea what would happen if I turned <i>my</i> homework in <i>your</i> handwriting? (Please make a selection)")
+
+                $(document).find('#message').show();
+            }else{
+                $(document).find('#message').hide();
+
+            if (value == quiz[currentQuestion].correctAnswers) {
+                correctAnswers++;
+            }
+
+            currentQuestion++;
+
+            if (currentQuestion < quiz.length) {
+                displayCurrentQuestion
+            }
+
+
+            }
+
+                
 
 
             }})

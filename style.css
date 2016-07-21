@@ -80,5 +80,10 @@ h3 {
 	text-align: center;
 	margin: auto;
 	padding: 5px;
+	box-shadow: 3px 3px 5px #888;
+}
+
+#nextButton:hover {
+	background-color: lightgrey;
 }
 
