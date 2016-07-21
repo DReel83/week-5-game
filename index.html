@@ -38,8 +38,9 @@
   <div class="panel-body">
     <div id="timer"><div>
     <div id="currentQuestion"></div>
-    <div id="choices"></div>
+    <ul id="choices"></ul>
     <div id="message"></div>
+    <div id="score"></div>
     <div id="nextButton">test</div>
   </div>
 </div>
@@ -144,17 +145,30 @@ $(document).ready()
 
             if (currentQuestion < quiz.length) {
                 displayCurrentQuestion
+
+            }else{
+                displayScore();
+                $(document).find('#nextButton').text('Great Scott! Let\'s go again.');
+                quizOver = true;
+               } 
+
+            }else{
+                quizOver = false;
+                $(document).find('#nextButton').text("Next Question");
+                resetQuiz();
+                displayCurrentQuestion();
+                hideScore();
             }
 
+        }
+    });
 
-            }
+function displayCurrentQuestion() {
+    console.log('display current question')
 
-                
-
-
-            }})
-
-
+    var question = question[currentQuestion].question;
+    var questionClass = $(document).find('')
+}
 
 
 
