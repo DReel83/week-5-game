@@ -120,7 +120,7 @@ var currentQuestion = 0;
 var correctAnswers = 0;
 var quizEnd = false;
 
-$(document).ready()
+$(document).ready(funnction () {}
 
     displayCurrentQuestion();
     $(this).find('#message').hide();
@@ -134,7 +134,9 @@ $(document).ready()
                 $(document).find('#message').text("Hey butthead! Do have any idea what would happen if I turned <i>my</i> homework in <i>your</i> handwriting? (Please make a selection)")
 
                 $(document).find('#message').show();
+
             }else{
+                
                 $(document).find('#message').hide();
 
             if (value == quiz[currentQuestion].correctAnswers) {
@@ -149,18 +151,18 @@ $(document).ready()
             }else{
                 displayScore();
                 $(document).find('#nextButton').text('Great Scott! Let\'s go again.');
-                quizOver = true;
+                quizEnd = true;
                } 
 
             }else{
-                quizOver = false;
+                quizEnd = false;
                 $(document).find('#nextButton').text("Next Question");
                 resetQuiz();
                 displayCurrentQuestion();
                 hideScore();
             }
 
-        }
+        });
     });
 
 function displayCurrentQuestion() {
