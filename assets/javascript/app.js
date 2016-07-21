@@ -1,62 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-<meta charset="utf-8">
-
-<!-- Viewport tag -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- bootstrap CDN -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-<!-- Style sheet link -->
-<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
 
 
-	<title>Trivia</title>
-
-
-</head>
-
-
-<body>
-
-<div class="container">
-	<div class="jumbotron">
-</div>
-
-<div>
-    <h1>TOTALLY TRIVIAL TRIVIA</h1>
-</div>
-
-
-
-
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title">let the journey begin</h3>
-  </div>
-  <div class="panel-body">
-    <div id="timer"><div>
-    <div id="currentQuestion"></div>
-    <ul id="choices"></ul>
-    <div id="message"></div>
-    <div id="score"></div>
-    <div id="nextButton">test</div>
-  </div>
-</div>
-
-
-</div>
-
-
-<script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
-
-
-<<<<<<< HEAD
 <script type="text/javascript">
 	
-
+//object containing questions, choices, and answers.
 
 var quiz = [
 {
@@ -117,23 +64,28 @@ var currentQuestion = 0;
 var correctAnswers = 0;
 var quizEnd = false;
 
-$(document).ready(funnction () {}
+$(document).ready(function () {
 
+//This displays the first question.
     displayCurrentQuestion();
     $(this).find('#message').hide();
 
-    $(this).find('#nextButton').on('click', function () 
+//Clicking next displays the next question.
+    $(this).find('#nextButton').on('click', function () {
+
+
         if (!quizEnd) {
 
             value = $('input[type="radio"]:checked').val();
 
             if(value == undefined) {
-                $(document).find('#message').text("Hey butthead! Do have any idea what would happen if I turned <i>my</i> homework in <i>your</i> handwriting? (Please make a selection)")
+                $(document).find('#message').text("Do have any idea what would happen if I turned <i>my</i> homework in <i>your</i> handwriting? (Please make a selection)")
 
                 $(document).find('#message').show();
 
-            }else{
-                
+            } else {
+
+            //If a message is displayed this should remove it.
                 $(document).find('#message').hide();
 
             if (value == quiz[currentQuestion].correctAnswers) {
@@ -145,23 +97,30 @@ $(document).ready(funnction () {}
             if (currentQuestion < quiz.length) {
                 displayCurrentQuestion
 
-            }else{
+            } else {
                 displayScore();
+
+                //This changes the text in the 'Next' button
+                //to ask the player is they want to go again.
                 $(document).find('#nextButton').text('Great Scott! Let\'s go again.');
                 quizEnd = true;
                } 
+            }
 
-            }else{
-                quizEnd = false;
-                $(document).find('#nextButton').text("Next Question");
-                resetQuiz();
-                displayCurrentQuestion();
-                hideScore();
+        } else {
+
+            // This resets the games so the play can start again.
+            quizEnd = false;
+            $(document).find('#nextButton').text("Next Question");
+            resetQuiz();
+            displayCurrentQuestion();
+            hideScore();
             }
 
         });
     });
 
+//This displays the current question as well as the choices for that question.
 function displayCurrentQuestion() {
     console.log('display current question')
 
@@ -169,14 +128,14 @@ function displayCurrentQuestion() {
     var questionClass = $(document).find('.panel-body' > '#currentQuestion');
     var choices  = $(document).find('.panel-body' > '#choices');
     var numChoices = quiz[currentQuestion].choices.length;
-
-
+    
+    // Sets the question to cuurent question
     $(questionClass).text(question);
 
-
+    //removes any list elements
     $(choices).find('li').remove();
 
-
+    //displays cloices
     var choice;
     for (i = 0; i < numChoices; i++) {
         choice = quiz[currentQuestion].choices[i];
@@ -186,42 +145,37 @@ function displayCurrentQuestion() {
     }
 }
 
+// Resets Quiz
 function resetQuiz() {
     currentQuestion = 0;
     correctAnswers = 0;
     hideScore();
 }
 
+//Displays score at end of game.
 function displayScore() {
     $(document).find('.panel-body' > '#score').text("You scored " + 
         correctAnswers + "out of: " + quiz.length);
     $(document).find('panel-body' > '#score').show();
 }
 
+// Hides score during game
 function hideScore() {
     $(document).find('#score').hide();
 }
 
+//Quiz timer
+var n = 30;
+setTimeout(countDown,1000);
 
-// var n = 30;
-// setTimeout(countDown,1500);
-
-// function countDown(){
-//    n--;
-//    if(n > 0){
-//       setTimeout(countDown,1500);
-//    }
-//    document.getElementById("timer")innerHTML = (n);
-// }
+function countDown(){
+   n--;
+   if(n > 0){
+      setTimeout(countDown,1000);
+   }
+   document.getElementById("#timer")innerHTML = (n);
+}
 
 
 
 </script>
-
-
-=======
->>>>>>> 489fed9fcdda5e21fb8993e6a8e05be882d5d108
-</div>
-
-</body>
-</html>
